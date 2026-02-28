@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 
-const IMAGE_SRC = "/your-photo.png" // put photo inside public folder
+const IMAGE_SRC = `${import.meta.env.BASE_URL}your-photo.png` // put photo inside public folder
 
 function InteractiveAvatar() {
   const canvasRef = useRef(null)

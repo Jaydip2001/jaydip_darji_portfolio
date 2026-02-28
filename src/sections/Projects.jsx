@@ -12,23 +12,23 @@ import {
 function Projects() {
   /* FEATURED PROJECTS */
   const featured = [
-    {
-      title: "AI-Powered Gymni Tracker App",
-      desc: "A modern React Native fitness app using Gemini AI to deliver smart workout guidance.",
-      img: "/gymni_thumbnail1.png",
-      github: "https://github.com/Jaydip2001/my-fitness-tracking-app",
-      live: "",
-      tech: "React Native | Gemini API | Sanity | Clerk | Expo",
-    },
-    {
-      title: "Ochi Website Clone",
-      desc: "Responsive and visually rich landing page inspired by the Ochi agency website.",
-      img: "/ochi_clone.png",
-      github: "https://github.com/Jaydip2001/ochi-clone",
-      live: "",
-      tech: "React.js | Tailwind CSS | GSAP | Locomotive Scroll | Vite",
-    },
-  ]
+  {
+    title: "AI-Powered Gymni Tracker App",
+    desc: "A modern React Native fitness app using Gemini AI to deliver smart workout guidance.",
+    img: `${import.meta.env.BASE_URL}gymni_thumbnail1.png`,
+    github: "https://github.com/Jaydip2001/my-fitness-tracking-app",
+    live: "",
+    tech: "React Native | Gemini API | Sanity | Clerk | Expo",
+  },
+  {
+    title: "Ochi Website Clone",
+    desc: "Responsive and visually rich landing page inspired by the Ochi agency website.",
+    img: `${import.meta.env.BASE_URL}ochi_clone.png`,
+    github: "https://github.com/Jaydip2001/ochi-clone",
+    live: "",
+    tech: "React.js | Tailwind CSS | GSAP | Locomotive Scroll | Vite",
+  },
+]
 
   const [index, setIndex] = useState(0)
 

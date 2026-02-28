@@ -60,7 +60,7 @@ function About() {
         <div className="flex justify-center md:justify-end">
           <div className="relative group w-[220px] sm:w-[260px] md:w-[300px]">
             <img
-              src="/your-photo.png"
+              src={`${import.meta.env.BASE_URL}your-photo.png`}
               alt="profile"
               className="rounded-xl w-full grayscale group-hover:grayscale-0 transition duration-500"
             />
