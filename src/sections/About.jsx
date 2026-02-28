@@ -59,17 +59,21 @@ function About() {
         {/* RIGHT IMAGE */}
         <div className="flex justify-center md:justify-end">
           <div className="relative group w-[220px] sm:w-[260px] md:w-[300px]">
-            <img
-              src={`${import.meta.env.BASE_URL}your-photo.png`}
-              alt="profile"
-              className="rounded-xl w-full grayscale group-hover:grayscale-0 transition duration-500"
-            />
+
+            {/* IMAGE WRAPPER (IMPORTANT) */}
+            <div className="rounded-xl overflow-hidden">
+              <img
+                src={`${import.meta.env.BASE_URL}your-photo.png`}
+                alt="profile"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500"
+              />
+            </div>
 
             {/* BORDER EFFECT */}
             <div className="absolute inset-0 rounded-xl border border-teal-400/40 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition duration-300"></div>
+
           </div>
         </div>
-
       </div>
     </section>
   )
