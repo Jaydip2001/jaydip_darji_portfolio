@@ -65,7 +65,7 @@ function About() {
               <img
                 src={`${import.meta.env.BASE_URL}your-photo.png`}
                 alt="profile"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500"
+                className="w-full h-full object-cover object-[60%_center] grayscale group-hover:grayscale-0 transition duration-500"
               />
             </div>
 
