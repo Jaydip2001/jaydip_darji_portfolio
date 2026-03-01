@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 
 function Hero() {
   return (
-   <section
-  id="hero"
-  className="min-h-screen flex items-center pt-28 px-6 sm:px-8 lg:px-16 max-w-6xl mx-auto"
->
+    <section
+      id="hero"
+      className="min-h-screen flex items-center pt-28 px-6 sm:px-8 lg:px-16 max-w-6xl mx-auto"
+    >
       <div className="grid md:grid-cols-2 gap-14 items-center w-full">
 
         {/* LEFT SIDE IMAGE */}
@@ -19,7 +19,19 @@ function Hero() {
           className="flex justify-center order-1 md:order-none"
         >
           <div className="w-[240px] sm:w-[280px] md:w-[340px] lg:w-[420px]">
-            <InteractiveAvatar />
+
+            {/* Desktop Avatar Animation */}
+            <div className="hidden md:block">
+              <InteractiveAvatar />
+            </div>
+
+            {/* Mobile Static Image (Fix Safari Crash) */}
+            <img
+              src={`${import.meta.env.BASE_URL}your-photo.png`}
+              alt="profile"
+              className="md:hidden w-full opacity-90"
+            />
+
           </div>
         </motion.div>
 
@@ -55,14 +67,14 @@ function Hero() {
           </p>
 
           <div className="mt-8">
-           <a 
-  href="mailto:yourmail@gmail.com?subject=Project Inquiry&body=Hello Jaydip,%0D%0A%0D%0AI have a query regarding your work.%0D%0A%0D%0AThank you." 
-  className="inline-block"
->
-  <button className="mt-8 border border-teal-400 px-6 py-3 rounded-lg hover:bg-teal-400/10 transition">
-    Say hi!
-  </button>
-</a>
+            <a
+              href="mailto:jaydip2801@gmail.com?subject=Project Inquiry&body=Hello Jaydip,%0D%0A%0D%0AI have a query regarding your work.%0D%0A%0D%0AThank you."
+              className="inline-block"
+            >
+              <button className="border border-teal-400 px-6 py-3 rounded-lg hover:bg-teal-400/10 transition">
+                Say hi!
+              </button>
+            </a>
           </div>
         </motion.div>
 
