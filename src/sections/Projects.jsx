@@ -45,7 +45,7 @@ function Projects() {
 
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % featured.length)
-    }, 4000)
+    }, 2500)
 
     return () => clearInterval(interval)
   }, [isHovered, featured.length])
