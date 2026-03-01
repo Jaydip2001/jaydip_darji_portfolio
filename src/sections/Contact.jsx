@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaEnvelope, FaMedium } from "react-icons/fa"
 
 function Contact() {
   return (
@@ -22,14 +22,12 @@ function Contact() {
       </p>
 
       {/* EMAIL BUTTON */}
-      <a 
-  href="mailto:yourmail@gmail.com?subject=Project Inquiry&body=Hello Jaydip,%0D%0A%0D%0AI have a query regarding your work.%0D%0A%0D%0AThank you." 
-  className="inline-block"
->
-  <button className="mt-8 border border-teal-400 px-6 py-3 rounded-lg hover:bg-teal-400/10 transition">
-    Say hi!
-  </button>
-</a>
+      <a
+        href="mailto:jaydip2801@gmail.com?subject=Project Inquiry&body=Hello Jaydip,%0D%0A%0D%0AI would like to connect with you.%0D%0A%0D%0AThank you."
+        className="inline-block mt-6 px-7 py-3 border border-teal-400 text-teal-400 rounded-lg hover:bg-teal-400 hover:text-black transition-all duration-300 shadow-md hover:shadow-teal-500/20"
+      >
+        Say Hi!
+      </a>
 
       {/* SOCIAL ICONS */}
       <div className="flex justify-center gap-8 mt-12 text-xl text-gray-400">
@@ -37,7 +35,7 @@ function Contact() {
           href="https://github.com/jaydip2001"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white transition transform hover:-translate-y-1"
+          className="hover:text-white transition transform hover:-translate-y-1 duration-300"
         >
           <FaGithub />
         </a>
@@ -46,14 +44,23 @@ function Contact() {
           href="https://www.linkedin.com/in/jaydipdarji2001"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white transition transform hover:-translate-y-1"
+          className="hover:text-white transition transform hover:-translate-y-1 duration-300"
         >
           <FaLinkedin />
         </a>
 
         <a
+          href="https://medium.com/@jaydip2801"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition transform hover:-translate-y-1 duration-300"
+        >
+          <FaMedium />
+        </a>
+
+        <a
           href="mailto:jaydip2801@gmail.com"
-          className="hover:text-white transition transform hover:-translate-y-1"
+          className="hover:text-white transition transform hover:-translate-y-1 duration-300"
         >
           <FaEnvelope />
         </a>

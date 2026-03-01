@@ -22,7 +22,7 @@ function Footer() {
         </span>
       </p>
 
-      {/* GITHUB */}
+      {/* GITHUB
       <div className="flex justify-center mt-5">
         <a
           href="https://github.com/jaydip2001"
@@ -32,7 +32,7 @@ function Footer() {
         >
           <FaGithub />
         </a>
-      </div>
+      </div> */}
 
       {/* COPYRIGHT */}
       <p className="mt-6 text-xs text-gray-600">
