@@ -12,36 +12,43 @@ import {
 function Projects() {
   /* FEATURED PROJECTS */
   const featured = [
-  {
-    title: "AI-Powered Gymni Tracker App",
-    desc: "A modern React Native fitness app using Gemini AI to deliver smart workout guidance.",
-    img: `${import.meta.env.BASE_URL}gymni_thumbnail1.png`,
-    github: "https://github.com/Jaydip2001/my-fitness-tracking-app",
-    live: "",
-    tech: "React Native | Gemini API | Sanity | Clerk | Expo",
-  },
-  {
-    title: "Ochi Website Clone",
-    desc: "Responsive and visually rich landing page inspired by the Ochi agency website.",
-    img: `${import.meta.env.BASE_URL}ochi_clone.png`,
-    github: "https://github.com/Jaydip2001/ochi-clone",
-    live: "",
-    tech: "React.js | Tailwind CSS | GSAP | Locomotive Scroll | Vite",
-  },
-]
+    {
+      title: "AI-Powered Gymni Tracker App",
+      desc: "A modern React Native fitness app using Gemini AI to deliver smart workout guidance.",
+      img: `${import.meta.env.BASE_URL}gymni_thumbnail1.png`,
+      github: "https://github.com/Jaydip2001/my-fitness-tracking-app",
+      live: "",
+      tech: "React Native | Gemini API | Sanity | Clerk | Expo",
+    },
+    {
+      title: "Ochi Website Clone",
+      desc: "Responsive and visually rich landing page inspired by the Ochi agency website.",
+      img: `${import.meta.env.BASE_URL}ochi_clone.png`,
+      github: "https://github.com/Jaydip2001/ochi-clone",
+      live: "",
+      tech: "React.js | Tailwind CSS | GSAP | Locomotive Scroll | Vite",
+    },
+  ]
 
   const [index, setIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
 
-  const next = () => setIndex((prev) => (prev + 1) % featured.length)
-  const prev = () => setIndex((prev) => (prev - 1 + featured.length) % featured.length)
+  const next = () =>
+    setIndex((prev) => (prev + 1) % featured.length)
 
-  /* AUTO SLIDE */
+  const prev = () =>
+    setIndex((prev) => (prev - 1 + featured.length) % featured.length)
+
+  /* AUTO SLIDE WITH HOVER PAUSE */
   useEffect(() => {
+    if (isHovered) return
+
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % featured.length)
     }, 4000)
+
     return () => clearInterval(interval)
-  }, [featured.length])
+  }, [isHovered, featured.length])
 
   /* SMALL PROJECT GRID */
   const projects = [
@@ -79,6 +86,8 @@ function Projects() {
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -60 }}
@@ -107,18 +116,38 @@ function Projects() {
               </p>
 
               <div className="flex gap-4 mt-4">
+                {/* GitHub */}
                 <a
                   href={featured[index].github || "#"}
-                  onClick={(e) => !featured[index].github && e.preventDefault()}
-                  className="w-9 h-9 flex items-center justify-center border border-gray-600 rounded-md text-gray-300 hover:border-teal-400 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) =>
+                    !featured[index].github && e.preventDefault()
+                  }
+                  className={`w-9 h-9 flex items-center justify-center border rounded-md transition
+                    ${
+                      featured[index].github
+                        ? "border-gray-600 text-gray-300 hover:border-teal-400"
+                        : "border-gray-700 text-gray-600 cursor-not-allowed"
+                    }`}
                 >
                   <FaGithub />
                 </a>
 
+                {/* Live */}
                 <a
                   href={featured[index].live || "#"}
-                  onClick={(e) => !featured[index].live && e.preventDefault()}
-                  className="w-9 h-9 flex items-center justify-center border border-gray-600 rounded-md text-gray-300 hover:border-teal-400 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) =>
+                    !featured[index].live && e.preventDefault()
+                  }
+                  className={`w-9 h-9 flex items-center justify-center border rounded-md transition
+                    ${
+                      featured[index].live
+                        ? "border-gray-600 text-gray-300 hover:border-teal-400"
+                        : "border-gray-700 text-gray-600 cursor-not-allowed"
+                    }`}
                 >
                   <FaExternalLinkAlt />
                 </a>
@@ -154,18 +183,34 @@ function Projects() {
               <FaFolderOpen className="text-teal-400 text-xl" />
 
               <div className="flex items-center gap-3">
+                {/* GitHub */}
                 <a
                   href={p.github || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => !p.github && e.preventDefault()}
-                  className="w-8 h-8 flex items-center justify-center border border-gray-700 rounded-md text-gray-400 hover:border-teal-400 transition"
+                  className={`w-8 h-8 flex items-center justify-center border rounded-md transition
+                    ${
+                      p.github
+                        ? "border-gray-700 text-gray-400 hover:border-teal-400"
+                        : "border-gray-800 text-gray-600 cursor-not-allowed"
+                    }`}
                 >
                   <FaGithub />
                 </a>
 
+                {/* Live */}
                 <a
                   href={p.live || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => !p.live && e.preventDefault()}
-                  className="flex items-center gap-1 px-2 py-1 border border-gray-700 rounded-md text-gray-400 hover:border-teal-400 transition text-xs"
+                  className={`flex items-center gap-1 px-2 py-1 border rounded-md text-xs transition
+                    ${
+                      p.live
+                        ? "border-gray-700 text-gray-400 hover:border-teal-400"
+                        : "border-gray-800 text-gray-600 cursor-not-allowed"
+                    }`}
                 >
                   <FaExternalLinkAlt className="text-xs" />
                   Live
@@ -173,7 +218,9 @@ function Projects() {
               </div>
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-200">{p.title}</h3>
+            <h3 className="text-lg font-semibold text-gray-200">
+              {p.title}
+            </h3>
             <p className="text-gray-400 text-sm mt-2">{p.desc}</p>
             <p className="text-gray-500 text-xs mt-4">{p.tech}</p>
           </div>
